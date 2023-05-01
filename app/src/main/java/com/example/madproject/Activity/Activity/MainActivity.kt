@@ -1,7 +1,7 @@
-package com.example.madproject.Activity
+package com.example.madproject.Activity.Activity
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.example.madproject.R
 
 class MainActivity : AppCompatActivity() {
