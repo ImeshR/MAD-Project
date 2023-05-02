@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.madproject.R
 
@@ -15,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Category.newInstance] factory method to
+ * Use the [Uni_book_category.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Category : Fragment() {
+class Uni_book_category : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -29,8 +28,6 @@ class Category : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
-//        replaceFragment(Al_book_category())
     }
 
     override fun onCreateView(
@@ -38,22 +35,7 @@ class Category : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val button1 = view.findViewById<Button>(R.id.albtn)
-        val button2 = view.findViewById<Button>(R.id.unibtn)
-
-        button1.setOnClickListener {
-            replaceFragment(Al_book_category())
-        }
-
-        button2.setOnClickListener {
-            replaceFragment(Uni_book_category())
-        }
+        return inflater.inflate(R.layout.fragment_uni_book_category, container, false)
     }
 
     companion object {
@@ -63,23 +45,16 @@ class Category : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Category.
+         * @return A new instance of fragment Uni_book_category.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Category().apply {
+            Uni_book_category().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = activity?.supportFragmentManager
-        val fragmentTransaction = fragmentManager?.beginTransaction()
-        fragmentTransaction?.replace(R.id.category_list_container, fragment)
-        fragmentTransaction?.commit()
     }
 }
