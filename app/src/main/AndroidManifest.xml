@@ -17,7 +17,7 @@
             android:name=".Activity.Activity.MainActivity"
             android:exported="false" />
 
-        <!-- Start Pager -->
+<!--        Start Pager -->
         <activity
             android:name=".Activity.Activity.SplashActivity"
             android:exported="true" >
