@@ -12,9 +12,11 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
-            android:name=".cardAdd_Form"
+            android:name=".payment_profile"
             android:exported="false" />
-        <!-- main page -->
+        <activity
+            android:name=".cardAdd_Form"
+            android:exported="false" /> <!-- main page -->
         <activity
             android:name=".Activity.Activity.MainActivity"
             android:exported="false" /> <!-- Start Pager -->
