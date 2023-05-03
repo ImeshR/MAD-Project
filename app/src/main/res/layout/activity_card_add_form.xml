@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button_crd_add"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.Activity.cardAdd_Form">
@@ -11,21 +12,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        app:menu="@menu/bottom_nav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-         />
+        app:menu="@menu/bottom_nav" />
 
     <View
         android:id="@+id/topView"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:background="@drawable/wave"
-        tools:ignore="MissingConstraints"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/s_form_title"
@@ -46,70 +46,68 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/shape_left_panel"
         app:layout_constraintTop_toBottomOf="@+id/s_form_title"
-        tools:ignore="MissingConstraints" >
+        tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="48dp"
-            android:layout_marginBottom="45dp"
-            app:srcCompat="@drawable/pay_girl" />
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView2"-->
+        <!--            android:layout_width="180dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentTop="true"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginTop="48dp"-->
+        <!--            android:layout_marginBottom="45dp"-->
+        <!--            app:srcCompat="@drawable/pay_girl" />-->
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/addingPanel"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="320dp"
-        android:layout_marginTop="112dp"
         android:background="@drawable/shape_details_panel"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingTop="40dp"
         android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/s_form_title">
 
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:hint="Card Holder Name" />-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:hint="Card Holder Name" />
 
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:hint="Card Number"-->
-<!--            android:inputType="number" />-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:hint="Card Number" />
 
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:hint="Expiry Date"-->
-<!--            android:inputType="date" />-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:hint="Expiry Date" />
 
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:hint="CVV"-->
-<!--            android:inputType="number" />-->
-
-        <Button
-            android:layout_constraintBottom_toBottomOf="@+id/addingPanel"
-            android:layout_constraintStart_toStartOf="parent"
-            android:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:text="Add Card"
-            android:textColor="@color/white"
-            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:hint="CVV" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_addingbutton"
+        android:text="Add Card"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/BottmoNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
