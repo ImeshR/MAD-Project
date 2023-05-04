@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,10 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
-<!--        Listing Dashbord-->
+        <activity
+            android:name=".Activity.Activity.ProfileInfo"
+            android:exported="false" />
+        <!-- Listing Dashbord -->
         <activity
             android:name=".Activity.Activity.ListingDashBoard"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activity.Activity.payment_profile"
             android:exported="false" />
@@ -36,17 +38,16 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Activity.Insert_Book"
-            android:exported="false" />
-        <!-- main page -->
+            android:exported="false" /> <!-- main page -->
         <activity
             android:name=".Activity.Activity.MainActivity"
-            android:exported="false" />
-        <!-- Start Pager -->
+            android:exported="false" /> <!-- Start Pager -->
         <activity
             android:name=".Activity.Activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -55,4 +56,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

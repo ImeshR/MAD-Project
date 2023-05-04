@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.example.madproject.R
+import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,31 +22,39 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Profile : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        firebaseAuth = FirebaseAuth.getInstance()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_profile, container, false)
-
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
-        val dashBoard = view.findViewById<ImageView>(R.id.dashboardBtn)
 
-        //navigate user update
+        //SignOut
+        val profileLogoutBtn = view.findViewById<Button>(R.id.profileLogoutBtn)
+        profileLogoutBtn.setOnClickListener {
+            firebaseAuth.signOut()
+            val intent = Intent(activity, MainNavigator::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
+
+        //Navigate to Dashboard
+        val dashBoard = view.findViewById<ImageView>(R.id.dashboardBtn)
         dashBoard.setOnClickListener {
             val intent = Intent(activity, ListingDashBoard::class.java)
+            startActivity(intent)
+        }
+
+        //Navigate to Profile View
+        val profileView = view.findViewById<Button>(R.id.profileBtn)
+        profileView.setOnClickListener {
+            val intent = Intent(activity, ProfileInfo::class.java)
             startActivity(intent)
         }
 
@@ -53,15 +62,6 @@ class Profile : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Profile.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             Profile().apply {
