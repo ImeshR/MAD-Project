@@ -15,6 +15,12 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Activity.MainNavigator"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.SignUp"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.Login"
             android:exported="false" />
         <activity
@@ -32,6 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
