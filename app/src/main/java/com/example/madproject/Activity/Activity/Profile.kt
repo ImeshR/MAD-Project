@@ -40,14 +40,14 @@ class Profile : Fragment() {
 //        return inflater.inflate(R.layout.fragment_profile, container, false)
 
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
-        val upBtn = view.findViewById<Button>(R.id.upbtn)
+//        val upBtn = view.findViewById<Button>(R.id.upbtn)
 
         //navigate user update
-        upBtn.setOnClickListener {
-            upBtn.setText("Update");
-            val intent = Intent(activity, ListingDashBoard::class.java)
-            startActivity(intent)
-        }
+//        upBtn.setOnClickListener {
+//            upBtn.setText("Update");
+//            val intent = Intent(activity, Insert_Book::class.java)
+//            startActivity(intent)
+//        }
 
         return view
     }
