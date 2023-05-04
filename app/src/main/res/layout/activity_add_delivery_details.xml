@@ -130,6 +130,21 @@
                     android:paddingLeft="10dp"
                     android:textStyle="bold" />
 
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="174dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/main_nav_btn"
+                    android:text="CHECKOUT"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
 
