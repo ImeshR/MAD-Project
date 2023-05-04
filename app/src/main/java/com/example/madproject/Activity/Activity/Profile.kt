@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.example.madproject.R
 
@@ -40,14 +41,13 @@ class Profile : Fragment() {
 //        return inflater.inflate(R.layout.fragment_profile, container, false)
 
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
-//        val upBtn = view.findViewById<Button>(R.id.upbtn)
+        val dashBoard = view.findViewById<ImageView>(R.id.dashboardBtn)
 
         //navigate user update
-//        upBtn.setOnClickListener {
-//            upBtn.setText("Update");
-//            val intent = Intent(activity, Insert_Book::class.java)
-//            startActivity(intent)
-//        }
+        dashBoard.setOnClickListener {
+            val intent = Intent(activity, ListingDashBoard::class.java)
+            startActivity(intent)
+        }
 
         return view
     }
