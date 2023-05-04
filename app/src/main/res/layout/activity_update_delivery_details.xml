@@ -107,9 +107,9 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="50dp"
                 android:width="40dp"
-                android:background="@drawable/checkout_btn"
+                android:background="@drawable/main_nav_btn"
                 android:text="update"
-                android:textColor="#1C1B1B"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
 
