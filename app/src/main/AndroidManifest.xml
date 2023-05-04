@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
+<!--        Listing Dashbord-->
+        <activity
+            android:name=".Activity.Activity.ListingDashBoard"
+            android:exported="false" />
         <activity
             android:name=".Activity.Activity.MainNavigator"
             android:exported="false" />
@@ -25,10 +29,12 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Activity.Insert_Book"
-            android:exported="false" /> <!-- main page -->
+            android:exported="false" />
+        <!-- main page -->
         <activity
             android:name=".Activity.Activity.MainActivity"
-            android:exported="false" /> <!-- Start Pager -->
+            android:exported="false" />
+        <!-- Start Pager -->
         <activity
             android:name=".Activity.Activity.SplashActivity"
             android:exported="true">
@@ -38,6 +44,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

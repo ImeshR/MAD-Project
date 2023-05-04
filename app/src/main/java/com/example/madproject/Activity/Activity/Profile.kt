@@ -37,6 +37,7 @@ class Profile : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_profile, container, false)
 
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
         val upBtn = view.findViewById<Button>(R.id.upbtn)
@@ -44,7 +45,7 @@ class Profile : Fragment() {
         //navigate user update
         upBtn.setOnClickListener {
             upBtn.setText("Update");
-            val intent = Intent(activity, Insert_Book::class.java)
+            val intent = Intent(activity, ListingDashBoard::class.java)
             startActivity(intent)
         }
 

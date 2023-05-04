@@ -9,9 +9,29 @@
     <string name="loginWelcomeMsg">Welcome \nBack !</string>
     <string name="linktoLogin">Already have an account?</string>
 
-    <string-array name="category_options">
-        <item>Advanced Level</item>
+    <string name="spinner_prompt">Select an option</string>
+    <string-array name="spinner_options">
+        <item>AL</item>
         <item>University</item>
+    </string-array>
+
+    <string name="spinner2_prompt_al">Select Stream</string>
+    <string-array name="spinner2_options_al">
+        <item>Maths</item>
+        <item>Biology</item>
+        <item>Art</item>
+        <item>Commerce</item>
+        <item>Technology</item>
+    </string-array>
+
+    <string name="spinner2_prompt_university">Select Stream</string>
+    <string-array name="spinner2_options_university">
+        <item>Computing</item>
+        <item>Engineering</item>
+        <item>Business</item>
+        <item>Law</item>
+        <item>Medical</item>
+        <item>Science</item>
     </string-array>
 
 </resources>
