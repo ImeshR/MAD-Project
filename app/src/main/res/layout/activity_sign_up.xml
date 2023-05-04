@@ -33,69 +33,81 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singUpFirstNameLayout"
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="60dp"
+            android:hint="First Name">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singUpFirstName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singUpLastNameLayout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:hint="Last Name">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singUpLastName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singUpEmailLayout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:hint="Email Address">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singUpEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singUpNumberLayout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:hint="Contact Number">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singUpNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="hint" />
+                android:layout_marginTop="20dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singUpPassLayout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:hint="Password">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singUpPass"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/singUpConfirmPassLayout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:hint="Confirm Password">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/singUpConfirmPass"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
