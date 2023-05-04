@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Activity.update_delivery_details">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:rotationX="180"
+            app:srcCompat="@drawable/wave" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Delivery Details"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="269dp"
+            app:srcCompat="@drawable/updateremov" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Address"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_backgrund"
+                android:drawableLeft="@drawable/baseline_home_24"
+                android:paddingLeft="10dp"/>
+
+            <EditText
+                android:id="@+id/editTextNumber"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Zip Code"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_backgrund"
+                android:drawableLeft="@drawable/baseline_location_on_24"
+                android:paddingLeft="10dp"/>
+"
+
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textStyle="bold"
+                android:hint="City"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_backgrund"
+                android:drawableLeft="@drawable/baseline_location_city_24"
+                android:paddingLeft="10dp"/>
+            />
+
+            <EditText
+                android:id="@+id/editTextNumber2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Track Number"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_backgrund"
+                android:drawableLeft="@drawable/baseline_post_add_24"
+                android:paddingLeft="10dp"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="50dp"
+                android:width="40dp"
+                android:background="@drawable/checkout_btn"
+                android:text="update"
+                android:textColor="#1C1B1B"
+                android:textSize="20sp"
+                android:textStyle="bold"
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
