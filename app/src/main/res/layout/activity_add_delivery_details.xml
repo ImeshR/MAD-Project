@@ -117,7 +117,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="172dp">
+                android:layout_height="165dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -129,6 +129,18 @@
                     android:hint="T.P Number"
                     android:paddingLeft="10dp"
                     android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="174dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/checkout_btn"
+                    android:text="CHECKOUT"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
