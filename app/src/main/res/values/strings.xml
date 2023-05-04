@@ -25,6 +25,14 @@
     </string-array>
 
     <string name="spinner2_prompt_university">Select Stream</string>
+    <string name="dividerline">____________________________________________________</string>
+    <string name="dFirstName">First Name</string>
+    <string name="dLastName">Last Name</string>
+    <string name="dEmail">Email</string>
+    <string name="dMobileNumber">Mobile Number</string>
+    <string name="dUpdate">Update</string>
+    <string name="dUpdatePass">Change Password</string>
+    <string name="dDeleteAcc">Delete Account</string>
     <string-array name="spinner2_options_university">
         <item>Computing</item>
         <item>Engineering</item>

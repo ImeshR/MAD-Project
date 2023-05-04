@@ -15,9 +15,20 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.Activity.ProfileInfo"
+            android:name=".Activity.Activity.updateUserPassword"
             android:exported="false" />
-        <!-- Listing Dashbord -->
+        <activity
+            android:name=".Activity.Activity.DeleteUserAccount"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.Privacy"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.ProfileSettings"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.ProfileInfo"
+            android:exported="false" /> <!-- Listing Dashbord -->
         <activity
             android:name=".Activity.Activity.ListingDashBoard"
             android:exported="false" />

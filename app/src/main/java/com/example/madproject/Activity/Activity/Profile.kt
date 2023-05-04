@@ -58,6 +58,20 @@ class Profile : Fragment() {
             startActivity(intent)
         }
 
+        //Navigate to Profile Settings
+        val profileSettings = view.findViewById<Button>(R.id.profileSettingsBtn)
+        profileSettings.setOnClickListener {
+            val intent = Intent(activity, ProfileSettings::class.java)
+            startActivity(intent)
+        }
+
+        //Navigate to Privacy
+        val privacy = view.findViewById<Button>(R.id.profilePrivacyBtn)
+        privacy.setOnClickListener {
+            val intent = Intent(activity, Privacy::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
 
