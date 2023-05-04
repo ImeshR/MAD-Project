@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:fontFamily="@font/poppins_semibold"
         android:text="Category"
         android:textSize="24sp" />
 
