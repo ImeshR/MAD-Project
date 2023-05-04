@@ -8,7 +8,6 @@ import com.example.madproject.R
 import com.example.madproject.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
 
 class SignUp : AppCompatActivity() {
 
@@ -20,11 +19,11 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        binding = ActivitySignUpBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
+
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         binding.signUpBtn.setOnClickListener {
@@ -53,13 +52,13 @@ class SignUp : AppCompatActivity() {
 
         binding.linktoLogin.setOnClickListener {
             startActivity(
-                android.content.Intent(this, Login::class.java)
+                Intent(this, Login::class.java)
             )
         }
 
         binding.navigateBackSignUp.setOnClickListener {
             startActivity(
-                android.content.Intent(this, MainNavigator::class.java)
+                Intent(this, MainNavigator::class.java)
             )
         }
     }

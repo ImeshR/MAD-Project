@@ -46,13 +46,13 @@ class Login : AppCompatActivity() {
         //Intent
         binding.navigateBackLogin.setOnClickListener {
             startActivity(
-                android.content.Intent(this, MainNavigator::class.java)
+                Intent(this, MainNavigator::class.java)
             )
         }
 
         binding.linktoSignUp.setOnClickListener {
             startActivity(
-                android.content.Intent(this, SignUp::class.java)
+                Intent(this, SignUp::class.java)
             )
         }
     }

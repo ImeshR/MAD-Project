@@ -1,5 +1,6 @@
 package com.example.madproject.Activity.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.madproject.R
@@ -18,13 +19,13 @@ class MainNavigator : AppCompatActivity() {
 
         binding.navMainLoginBtn.setOnClickListener {
             startActivity(
-                android.content.Intent(this, Login::class.java)
+                Intent(this, Login::class.java)
             )
         }
 
         binding.navMainSignUpBtn.setOnClickListener {
             startActivity(
-                android.content.Intent(this, SignUp::class.java)
+                Intent(this, SignUp::class.java)
             )
         }
     }
