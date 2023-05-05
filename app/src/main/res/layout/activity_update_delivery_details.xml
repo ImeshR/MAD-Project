@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="88dp"
             android:rotationX="180"
-            app:srcCompat="@drawable/wave" />
+            app:srcCompat="@drawable/header" />
 
         <TextView
             android:id="@+id/textView4"
