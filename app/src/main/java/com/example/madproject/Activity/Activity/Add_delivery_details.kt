@@ -64,8 +64,6 @@ class Add_delivery_details : AppCompatActivity() {
                     }
                 }
 
-
-
         }
     }
 }

@@ -108,7 +108,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:fontFamily="@font/poppins_bold"
                         android:text="Your Balance"
                         android:textSize="18dp" />
 
@@ -166,8 +165,7 @@
                 android:layout_marginTop="26dp"
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="26dp"
-                android:centerInparent="true"
-                android:fontFamily="@font/poppins_bold"
+                android:layout_centerInParent="true"
                 android:text="Payment Methods"
                 android:textSize="28sp" />
 

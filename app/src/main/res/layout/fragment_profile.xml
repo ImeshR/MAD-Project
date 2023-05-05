@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/AppTheme"
-    android:id="@+id/fra"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".Activity.Activity.Profile">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,112 +12,155 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout3"
+            android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
+            android:elevation="10dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="15dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView5"
-                android:layout_width="600dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="Diwan Sachidu"
-                android:textSize="32dp" />
-
-            <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/logUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/userprofile" />
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="5dp"
+                android:text="Diwan Sachidu"
+                android:textSize="30dp" />
 
+            <ImageView
+                android:id="@+id/userProfileImg"
+                android:layout_width="10dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:src="@drawable/profileimg_large" />
         </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/bottomshadow_line"
+            android:elevation="8dp"
+            android:translationZ="2dp"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+            tools:ignore="MissingConstraints" />
 
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:layout_height="100dp"
+            android:layout_marginTop="25dp"
             android:orientation="horizontal"
-            tools:layout_editor_absoluteX="15dp"
-            tools:layout_editor_absoluteY="110dp"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/dashboardBtn"
-                android:layout_width="120dp"
-                android:layout_height="115dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:src="@drawable/dashboard_profilecard" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/purchasedBtn"
-                android:layout_width="120dp"
-                android:layout_height="115dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:src="@drawable/purchased_profilecard" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/walletBtn"
-                android:layout_width="120dp"
-                android:layout_height="115dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:src="@drawable/wallet_profilecard" />
-
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout6"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout5"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout5"/>
+            android:layout_height="250dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
-        <Button
-            android:id="@+id/profileBtn"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/profileBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_nav_btn"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+            <Button
+                android:id="@+id/profileSettingsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/main_nav_btn"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Profile Settings"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+            <Button
+                android:id="@+id/profilePrivacyBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/main_nav_btn"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Privacy"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Profile"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-            tools:layout_editor_absoluteX="27dp"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintVertical_bias="0.736">
 
-        <Button
-            android:id="@+id/profileSettingsBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile Settings"
-            app:layout_constraintStart_toStartOf="@+id/profileBtn"
-            app:layout_constraintTop_toBottomOf="@+id/profileBtn" />
-
-        <Button
-            android:id="@+id/profilePrivacyBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Privacy"
-            app:layout_constraintStart_toStartOf="@+id/profileSettingsBtn"
-            app:layout_constraintTop_toBottomOf="@+id/profileSettingsBtn" />
-
-        <Button
-            android:id="@+id/profileLogoutBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            app:layout_constraintStart_toStartOf="@+id/profilePrivacyBtn"
-            app:layout_constraintTop_toBottomOf="@+id/profilePrivacyBtn" />
+            <Button
+                android:id="@+id/profileLogoutBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/main_nav_btn"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Logout"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>
