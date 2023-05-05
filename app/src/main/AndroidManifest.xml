@@ -15,6 +15,12 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Activity.Update_each_book"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.UpdateBook"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.DeleteBookItem"
             android:exported="false" />
         <activity
@@ -22,7 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Activity.BookDetails"
-             android:exported="false" />
+            android:exported="false" />
         <activity
             android:name=".Activity.Activity.updateUserPassword"
             android:exported="false" />
