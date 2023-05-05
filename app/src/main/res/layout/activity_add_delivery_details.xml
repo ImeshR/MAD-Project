@@ -44,114 +44,86 @@
             android:layout_height="286dp"
             app:srcCompat="@drawable/delivry3" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/address"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:hint="Address"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/edit_backgrund"
-                    android:drawableLeft="@drawable/baseline_home_24"
-                    android:paddingLeft="10dp"
-
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:hint="Zip Code"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/edit_backgrund"
-                    android:drawableLeft="@drawable/baseline_post_add_24"
-                    android:paddingLeft="10dp"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:hint="City"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/edit_backgrund"
-                    android:drawableLeft="@drawable/baseline_location_city_24"
-                    android:paddingLeft="10dp"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:hint="Track Number"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/edit_backgrund"
-                    android:drawableLeft="@drawable/baseline_delivery_dining_24"
-                    android:paddingLeft="10dp"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="165dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/edit_backgrund"
-                    android:drawableLeft="@drawable/baseline_phone_24"
-                    android:hint="T.P Number"
-                    android:paddingLeft="10dp"
-                    android:textStyle="bold" />
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="174dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_weight="1"
-
-                    android:background="@drawable/checkout_btn"
-                    android:text="CHECKOUT"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                    android:background="@drawable/main_nav_btn"
-                    android:text="CHECKOUT"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="40dp"
+            android:hint="Address"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/edit_backgrund"
+            android:drawableLeft="@drawable/baseline_home_24"
+            android:paddingLeft="10dp"/>
 
 
-        </com.google.android.material.textfield.TextInputLayout>
+        <EditText
+            android:id="@+id/zip"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Zip code"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/edit_backgrund"
+            android:drawableLeft="@drawable/baseline_home_24"
+            android:paddingLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="City"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/edit_backgrund"
+            android:drawableLeft="@drawable/baseline_home_24"
+            android:paddingLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/track"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Track number"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/edit_backgrund"
+            android:drawableLeft="@drawable/baseline_home_24"
+            android:paddingLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/tp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="T.P No"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/edit_backgrund"
+            android:drawableLeft="@drawable/baseline_home_24"
+            android:paddingLeft="10dp"/>
+
+        <Button
+            android:id="@+id/checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_nav_btn"
+            android:layout_marginTop="40dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="CheckOut"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
 
     </LinearLayout>
 
