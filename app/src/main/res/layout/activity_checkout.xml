@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Activity.Checkout"
+    android:background="@color/s_primary_color">
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/s_greating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Welcome Back"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/s_userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="Split Your Bill"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/s_order_detail_box"
+        android:layout_width="320dp"
+        android:layout_height="370dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/s_order_details_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="84dp"
+        app:layout_constraintEnd_toEndOf="@+id/s_order_detail_box"
+        app:layout_constraintTop_toTopOf="@+id/s_order_detail_box"
+        app:srcCompat="@drawable/book2" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="The Design of EveryDay Things"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/s_order_detail_box"
+        app:layout_constraintStart_toStartOf="@+id/s_order_detail_box"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="428dp"
+        android:layout_marginEnd="285dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Total Bill"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/s_order_detail_box"
+        app:layout_constraintStart_toStartOf="@+id/s_order_detail_box"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs, 1750,00"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/s_order_detail_box"
+        app:layout_constraintStart_toStartOf="@+id/s_order_detail_box"
+        tools:layout_editor_absoluteY="448dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
