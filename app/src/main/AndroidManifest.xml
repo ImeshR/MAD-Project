@@ -51,9 +51,6 @@
             android:name=".Activity.Activity.payment_profile"
             android:exported="false" />
         <activity
-            android:name=".Activity.Activity.update_delivery_details"
-            android:exported="false" />
-        <activity
             android:name=".Activity.Activity.MainNavigator"
             android:exported="false" />
         <activity

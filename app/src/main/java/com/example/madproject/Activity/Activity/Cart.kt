@@ -1,5 +1,6 @@
 package com.example.madproject.Activity.Activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,14 +33,26 @@ class Cart : Fragment() {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_cart, container, false)
+
+        // find the button in the layout
+        val button = view.findViewById<Button>(R.id.addressbtn)
+
+        // set a click listener on the button to move to AnotherActivity
+        button.setOnClickListener {
+            val intent = Intent(activity,Add_delivery_details::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
+
 
     companion object {
         /**
