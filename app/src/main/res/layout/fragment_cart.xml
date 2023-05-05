@@ -180,7 +180,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/address"
+                    android:id="@+id/addressbtn"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="90dp"
