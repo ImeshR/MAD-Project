@@ -49,4 +49,7 @@
         <item>Science</item>
     </string-array>
 
+
+    <string name="listing_dash_title2"><u>Here Is Your Listed Books</u></string>
+
 </resources>
