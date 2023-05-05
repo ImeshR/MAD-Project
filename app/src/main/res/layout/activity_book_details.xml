@@ -9,14 +9,14 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="145dp"
+        android:layout_width="174dp"
         android:layout_height="57dp"
         android:layout_marginBottom="64dp"
         android:drawableLeft="@drawable/baseline_shopping_cart_24"
-        android:paddingLeft="18dp"
+        android:paddingLeft="8dp"
         android:text="Add To Cart"
-        android:textSize="20dp"
         android:textColor="@color/white"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
