@@ -13,7 +13,8 @@
     <color name="s_cream">#E8E2DB</color>
     <color name="s_green_light">#4cc9f0</color>
     <color name="s_primary_color">#232f3e</color>
-
+    <color name="s_yellow">#ffd60a</color>
+    <color name="s_lightgreen">#64e764</color>
     <color name="primaryColor">#131A22</color>
 
 </resources>

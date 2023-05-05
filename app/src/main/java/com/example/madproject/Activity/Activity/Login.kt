@@ -3,6 +3,8 @@ package com.example.madproject.Activity.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Patterns
 import android.widget.Toast
 import com.example.madproject.R
 import com.example.madproject.databinding.ActivityLoginBinding
@@ -27,6 +29,11 @@ class Login : AppCompatActivity() {
             val email = binding.loginEmail.text.toString()
             val pass = binding.loginPass.text.toString()
 
+            if (!isValidEmail(email)) {
+                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             if (email.isNotEmpty() && pass.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
@@ -34,7 +41,7 @@ class Login : AppCompatActivity() {
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Login Failed!", Toast.LENGTH_SHORT).show()
                     }
                 }
             } else {
@@ -55,5 +62,9 @@ class Login : AppCompatActivity() {
                 Intent(this, SignUp::class.java)
             )
         }
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }

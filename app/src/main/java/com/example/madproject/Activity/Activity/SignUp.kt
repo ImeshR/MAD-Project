@@ -3,6 +3,8 @@ package com.example.madproject.Activity.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Patterns
 import android.widget.Toast
 import com.example.madproject.R
 import com.example.madproject.databinding.ActivitySignUpBinding
@@ -33,6 +35,16 @@ class SignUp : AppCompatActivity() {
             val mobileNumber = binding.singUpNumber.text.toString()
             val password = binding.singUpPass.text.toString()
             val confirmPassword = binding.singUpConfirmPass.text.toString()
+
+            if (!isValidEmail(email)) {
+                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (!isValidPhoneNumber(mobileNumber)) {
+                Toast.makeText(this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && mobileNumber.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                 if (password == (confirmPassword)) {
@@ -67,7 +79,7 @@ class SignUp : AppCompatActivity() {
         val user = UserData(uid, firstName, lastName, email, mobileNumber, password)
         firestore.collection("users").document(uid).set(user).addOnCompleteListener {
             if (it.isSuccessful) {
-                Toast.makeText(this, "User Saved", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "User Created", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, Login::class.java)
                 intent.putExtra("USER_ID", uid)
                 startActivity(intent)
@@ -75,5 +87,13 @@ class SignUp : AppCompatActivity() {
                 Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    private fun isValidPhoneNumber(number: String): Boolean {
+        return number.length == 10 && TextUtils.isDigitsOnly(number)
     }
 }

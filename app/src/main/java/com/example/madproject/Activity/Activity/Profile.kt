@@ -2,14 +2,18 @@ package com.example.madproject.Activity.Activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.madproject.R
+import com.example.madproject.databinding.ActivityProfileInfoBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,11 +26,14 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Profile : Fragment() {
+
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseFirestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
+        firebaseFirestore = FirebaseFirestore.getInstance()
     }
 
     override fun onCreateView(
@@ -58,6 +65,12 @@ class Profile : Fragment() {
             startActivity(intent)
         }
 
+        val userProfile = view.findViewById<ImageView>(R.id.userProfileImg)
+        userProfile.setOnClickListener {
+            val intent = Intent(activity, ProfileInfo::class.java)
+            startActivity(intent)
+        }
+
         //Navigate to Profile Settings
         val profileSettings = view.findViewById<Button>(R.id.profileSettingsBtn)
         profileSettings.setOnClickListener {
@@ -72,6 +85,25 @@ class Profile : Fragment() {
             startActivity(intent)
         }
 
+        // Fetch and display user's name
+        val logUserName = view.findViewById<TextView>(R.id.logUserName)
+        val userId = firebaseAuth.currentUser?.uid
+        userId?.let {
+            firebaseFirestore.collection("users").document(it).get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        val firstName = document.getString("firstName")
+                        val lastName = document.getString("lastName")
+                        val fullName = "$firstName $lastName"
+                        logUserName.text = fullName
+                    } else {
+                        Log.d("Profile", "No such document")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d("Profile", "get failed with ", exception)
+                }
+        }
         return view
     }
 

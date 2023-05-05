@@ -21,6 +21,9 @@
             android:name=".Activity.Activity.DeleteBookList"
             android:exported="false" />
         <activity
+            android:name=".Activity.Activity.BookDetails"
+             android:exported="false" />
+        <activity
             android:name=".Activity.Activity.updateUserPassword"
             android:exported="false" />
         <activity
