@@ -15,6 +15,12 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Activity.DeleteBookItem"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.DeleteBookList"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.updateUserPassword"
             android:exported="false" />
         <activity

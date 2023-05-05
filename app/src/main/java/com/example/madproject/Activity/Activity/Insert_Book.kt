@@ -86,6 +86,8 @@ class Insert_Book : AppCompatActivity() {
         // Set up upload button
         uploadButton.setOnClickListener {
             uploadData()
+            val intent = Intent(this, ListingDashBoard::class.java)
+            startActivity(intent)
         }
 
 
@@ -131,10 +133,6 @@ class Insert_Book : AppCompatActivity() {
                 spinner2_university.visibility = View.GONE
             }
         }
-
-
-
-
 
     }
 
