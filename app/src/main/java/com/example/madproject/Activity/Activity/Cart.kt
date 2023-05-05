@@ -1,9 +1,11 @@
 package com.example.madproject.Activity.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.madproject.R
 
@@ -30,13 +32,36 @@ class Cart : Fragment() {
         }
     }
 
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_cart, container, false)
+//    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_cart, container, false)
+
+        // Find the button by its ID
+        val launchButton = rootView.findViewById<Button>(R.id.address)
+
+        // Set a click listener on the button
+        launchButton.setOnClickListener {
+            // Create an intent to launch SecondActivity
+            val intent = Intent(activity, Add_delivery_details::class.java)
+            startActivity(intent)
+        }
+
+        return rootView
     }
+
+
+
 
     companion object {
         /**
@@ -57,4 +82,9 @@ class Cart : Fragment() {
                 }
             }
     }
+
+
+
+
+
 }

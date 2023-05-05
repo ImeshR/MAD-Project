@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="white"
+    android:background="@color/white"
     tools:context=".Activity.Activity.Cart">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +28,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="25dp"
                     android:elevation="10dp"
-                    app:cardBackgroundColor="#EA981E"
+                    app:cardBackgroundColor="@color/design_default_color_background"
                     app:cardCornerRadius="5dp">
 
                     <TextView
@@ -39,15 +39,14 @@
                         android:layout_marginBottom="6dp"
                         android:text="MY CART"
                         android:textAlignment="center"
-                        android:textColor="#FFFFFF
-"
+                        android:textColor="#F32222 "
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp" />
 
                 <LinearLayout
@@ -143,7 +142,6 @@
 
                             android:layout_width="28dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight=""
                             android:text="$"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -182,16 +180,16 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="90dp"
                     android:layout_marginTop="9dp"
-                    android:background="@drawable/checkout_btn"
+                    android:background="@drawable/main_nav_btn"
                     android:gravity="center"
-                    android:text="CHECKOUT"
+                    android:text="ADDRESS"
                     android:textAlignment="center"
-                    android:textColor="#59564C  "
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
 

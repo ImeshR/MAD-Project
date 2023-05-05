@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.madproject.R
 
-class Add_delivery_details : AppCompatActivity() {
+class ListingDashBoard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_delivery_details)
+        setContentView(R.layout.activity_listing_dash_board)
     }
 }
