@@ -64,14 +64,6 @@
                 android:textSize="28sp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/s_profilePic"
-            android:layout_width="50dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/profile_P" />
-
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -108,7 +100,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:fontFamily="@font/poppins_bold"
                         android:text="Your Balance"
                         android:textSize="18dp" />
 
@@ -167,7 +158,6 @@
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="26dp"
                 android:centerInparent="true"
-                android:fontFamily="@font/poppins_bold"
                 android:text="Payment Methods"
                 android:textSize="28sp" />
 
@@ -177,6 +167,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="320dp"
         android:layout_height="350dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toTopOf="@+id/BottmoNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -215,11 +206,80 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/s_Ivory"
-                    android:layout_margin="40dp">
+                    android:layout_margin="10dp"
+                    android:background="@color/s_Ivory">
+
+                    <TableRow android:background="@color/s_lightgreen">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="@string/s_T_col1"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="@string/s_T_col2"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="@string/s_T_col3"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="@string/s_T_row1PID"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="@string/s_T_row1date"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="@string/s_T_row1amount"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </TableRow>
+
                 </TableLayout>
             </RelativeLayout>
         </LinearLayout>

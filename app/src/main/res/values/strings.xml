@@ -13,5 +13,12 @@
         <item>Advanced Level</item>
         <item>University</item>
     </string-array>
+    <string name="s_T_col1">Payment Id</string>
+    <string name="s_T_col2">Date</string>
+    <string name="s_T_col3">Amount</string>
+    <string name="s_T_row1PID">P004</string>
+    <string name="s_T_row1date">2023-apr-25</string>
+    <string name="s_T_row1amount">1250.00</string>
+
 
 </resources>
