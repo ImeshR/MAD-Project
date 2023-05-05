@@ -21,7 +21,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/main_navigator"
         android:orientation="vertical"
         android:paddingLeft="20dp"
@@ -32,89 +32,182 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/singUpFirstNameLayout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="First Name">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/singUpFirstName"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/singUpLastNameLayout"
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="First Name"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/singUpFirstNameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/singUpFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/inputbox_outline"
+                        android:paddingLeft="10dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Last Name"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/singUpLastNameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/singUpLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/inputbox_outline"
+                        android:paddingLeft="10dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView27"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Last Name">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/singUpLastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:fontFamily="@font/poppins"
+            android:text="Email Address"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/singUpEmailLayout"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:hint="Email Address">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/singUpEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50dp"
+                android:layout_marginTop="-10dp"
+                android:background="@drawable/inputbox_outline"
+                android:paddingLeft="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins"
+            android:text="Contact Number"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/singUpNumberLayout"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:hint="Contact Number">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/singUpNumber"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"/>
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/inputbox_outline"
+                android:paddingLeft="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins"
+            android:text="Password"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/singUpPassLayout"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:hint="Password">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/singUpPass"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50dp"
+                android:background="@drawable/inputbox_outline"
+                android:paddingLeft="10dp"
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins"
+            android:text="Confirm Password"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/singUpConfirmPassLayout"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:hint="Confirm Password">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/singUpConfirmPass"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50dp"
+                android:background="@drawable/inputbox_outline"
+                android:paddingLeft="10dp"
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/signUpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/main_nav_btn"
             android:text="@string/SignUp"
             android:textColor="@color/white"
@@ -124,8 +217,8 @@
             android:id="@+id/linktoLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:paddingTop="20dp"
             android:text="@string/linktoLogin"
             android:textColor="@color/black"
             android:textSize="17dp" />

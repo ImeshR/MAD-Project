@@ -63,7 +63,13 @@
                 android:textColor="@color/white"
                 android:textSize="28sp" />
         </LinearLayout>
-
+        <ImageView
+            android:id="@+id/s_profilePic"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/profile_p" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -157,7 +163,7 @@
                 android:layout_marginTop="26dp"
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="26dp"
-                android:centerInparent="true"
+                android:layout_centerInParent="true"
                 android:text="Payment Methods"
                 android:textSize="28sp" />
 

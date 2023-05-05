@@ -4,16 +4,19 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.madproject.R
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import java.util.*
+
 
 class Insert_Book : AppCompatActivity() {
     // Views
@@ -24,6 +27,16 @@ class Insert_Book : AppCompatActivity() {
     private lateinit var categorySpinner: Spinner
     private lateinit var addressEditText: EditText
     private lateinit var uploadButton: Button
+    private lateinit var spinner2_al: Spinner
+    private lateinit var spinner2_university: Spinner
+
+
+    lateinit var streamname : String
+
+    private lateinit var subCategorySpinner: AutoCompleteTextView
+    private var categoryAdapter: ArrayAdapter<String>? = null
+    private var subcategoryAdapter: ArrayAdapter<String>? = null
+
 
     // Image URI
     private var imageUri: Uri? = null
@@ -31,6 +44,10 @@ class Insert_Book : AppCompatActivity() {
     // Firebase references
     private lateinit var storageRef: StorageReference
     private lateinit var firestoreDb: FirebaseFirestore
+
+
+    private lateinit var userid : String
+    private lateinit var firebaseAuth: FirebaseAuth
 
     // Upload progress dialog
     private lateinit var progressDialog: ProgressDialog
@@ -47,10 +64,17 @@ class Insert_Book : AppCompatActivity() {
         categorySpinner = findViewById(R.id.categorySpinner)
         addressEditText = findViewById(R.id.addressEditText)
         uploadButton = findViewById(R.id.uploadButton)
+        spinner2_al = findViewById(R.id.spinner2_al)
+        spinner2_university = findViewById(R.id.spinner2_university)
+
+
 
         // Initialize Firebase references
         storageRef = FirebaseStorage.getInstance().reference
         firestoreDb = FirebaseFirestore.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        userid = firebaseAuth.currentUser?.uid ?: ""
 
         // Set up image selection
         imageView.setOnClickListener {
@@ -63,6 +87,55 @@ class Insert_Book : AppCompatActivity() {
         uploadButton.setOnClickListener {
             uploadData()
         }
+
+
+        //print user id on log cat
+        println("User ID: $userid")
+
+        //for spinner change onlye AL and University
+
+
+        val adapter = ArrayAdapter.createFromResource(this, R.array.spinner_options, android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        categorySpinner.adapter = adapter
+
+        val spinner2_al = findViewById<Spinner>(R.id.spinner2_al)
+        val adapter2_al = ArrayAdapter.createFromResource(this, R.array.spinner2_options_al, android.R.layout.simple_spinner_item)
+        adapter2_al.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner2_al.adapter = adapter2_al
+
+        val spinner2_university = findViewById<Spinner>(R.id.spinner2_university)
+        val adapter2_university = ArrayAdapter.createFromResource(this, R.array.spinner2_options_university, android.R.layout.simple_spinner_item)
+        adapter2_university.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner2_university.adapter = adapter2_university
+
+        categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedItem = parent.getItemAtPosition(position) as String
+                if (selectedItem == "AL") {
+                    spinner2_al.visibility = View.VISIBLE
+                    spinner2_university.visibility = View.GONE
+
+                    streamname = spinner2_al.selectedItem.toString()
+
+                } else if (selectedItem == "University") {
+                    spinner2_al.visibility = View.GONE
+                    spinner2_university.visibility = View.VISIBLE
+
+                    streamname = spinner2_university.selectedItem.toString()
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                spinner2_al.visibility = View.GONE
+                spinner2_university.visibility = View.GONE
+            }
+        }
+
+
+
+
+
     }
 
     // Constants
@@ -117,11 +190,13 @@ class Insert_Book : AppCompatActivity() {
                     "description" to descriptionEditText.text.toString(),
                     "category" to categorySpinner.selectedItem.toString(),
                     "address" to addressEditText.text.toString(),
-                    "imageUrl" to downloadUri.toString()
+                    "imageUrl" to downloadUri.toString(),
+                    "userId" to userid,
+                    "stream" to streamname
                 )
 
                 // Upload data to Firestore
-                firestoreDb.collection("items").add(data).addOnSuccessListener {
+                firestoreDb.collection("Books").add(data).addOnSuccessListener {
                     // Dismiss progress dialog
                     progressDialog.dismiss()
 
