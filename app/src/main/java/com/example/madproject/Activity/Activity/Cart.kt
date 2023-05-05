@@ -32,36 +32,14 @@ class Cart : Fragment() {
         }
     }
 
-//    override fun onCreateView(
-//        inflater: LayoutInflater, container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_cart, container, false)
-//    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_cart, container, false)
-
-        // Find the button by its ID
-        val launchButton = rootView.findViewById<Button>(R.id.address)
-
-        // Set a click listener on the button
-        launchButton.setOnClickListener {
-            // Create an intent to launch SecondActivity
-            val intent = Intent(activity, Add_delivery_details::class.java)
-            startActivity(intent)
-        }
-
-        return rootView
+        val view = inflater.inflate(R.layout.fragment_cart, container, false)
+        return view
     }
-
-
-
 
     companion object {
         /**
@@ -82,9 +60,5 @@ class Cart : Fragment() {
                 }
             }
     }
-
-
-
-
 
 }

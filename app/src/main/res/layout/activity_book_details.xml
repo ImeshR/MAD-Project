@@ -44,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.682"
         app:layout_constraintStart_toStartOf="parent"
         android:textStyle="bold"
-        android:textSize="15dp">
+        android:textSize="15dp"/>
 
     <TextView
         android:id="@+id/textView14"
@@ -65,7 +65,8 @@
         android:layout_width="414dp"
         android:layout_height="99dp"
         app:srcCompat="@drawable/headers"
-        tools:layout_editor_absoluteX="-8dp" />
+        tools:layout_editor_absoluteX="-8dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView7"

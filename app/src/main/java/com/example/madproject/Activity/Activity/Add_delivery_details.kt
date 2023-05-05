@@ -63,9 +63,6 @@ class Add_delivery_details : AppCompatActivity() {
                         Toast.makeText(this, "Failed to store delivery details", Toast.LENGTH_SHORT).show()
                     }
                 }
-
-
-
         }
     }
 }
