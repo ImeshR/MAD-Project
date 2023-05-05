@@ -7,11 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".Activity.Activity.BookDetails">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/BottmoNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav" />
+
     <Button
         android:id="@+id/button5"
         android:layout_width="174dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="76dp"
         android:drawableLeft="@drawable/baseline_shopping_cart_24"
         android:paddingLeft="8dp"
         android:text="Add To Cart"
@@ -19,7 +29,7 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:background="@drawable/main_nav_btn" />
 
