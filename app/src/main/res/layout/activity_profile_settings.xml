@@ -40,7 +40,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editFirstName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="45dp"
+                android:background="@drawable/inputbox_outline"
+                android:paddingLeft="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -61,7 +63,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editLastName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="45dp"
+                android:background="@drawable/inputbox_outline"
+                android:paddingLeft="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -82,7 +86,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="45dp"
+                android:background="@drawable/inputbox_outline"
+                android:paddingLeft="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -103,14 +109,16 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editMobileNumber"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="45dp"
+                android:background="@drawable/inputbox_outline"
+                android:paddingLeft="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/updateProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/main_nav_btn"
             android:text="@string/dUpdate"
             android:textColor="@color/white"
