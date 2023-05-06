@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.118" />
 
     <TextView
-        android:id="@+id/tvheading2"
+        android:id="@+id/price"
         android:layout_width="207dp"
         android:layout_height="31dp"
         android:layout_marginStart="16dp"
@@ -50,7 +50,7 @@
         app:layout_constraintVertical_bias="0.179" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/deleteicon"
         android:layout_width="57dp"
         android:layout_height="54dp"
         app:layout_constraintBottom_toTopOf="@+id/tvheading"
@@ -59,7 +59,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.695"
-        app:srcCompat="@drawable/baseline_delete_24" />
+        app:srcCompat="@drawable/baseline_delete_24"
+        android:contentDescription="@string/delete_icon_description" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
