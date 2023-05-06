@@ -1,11 +1,19 @@
 package com.example.madproject.Activity.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +30,17 @@ class Home : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+    val db = Firebase.firestore
+    private lateinit var userid: String
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseFirestore: FirebaseFirestore
+
+    var storage = FirebaseStorage.getInstance()
+
+    // Create a list of books
+    private val books = mutableListOf<Book>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +54,20 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        // call recyclerView in fragment
+        val recyclerView = view.findViewById<RecyclerView>(R.id.homerecycleview)
+        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
+        // Create an instance of the adapter and set it to the recyclerView
+        val adapter = BookHomeAdapter(books)
+        recyclerView.adapter = adapter
+
+        // call the displaybook() method to fetch books from Firestore and update the adapter
+        displaybook(adapter)
+
+        return view
     }
 
     companion object {
@@ -58,5 +90,39 @@ class Home : Fragment() {
             }
     }
 
-    
+    // fetch books from Firestore and update the adapter
+    private fun displaybook(adapter: BookHomeAdapter) {
+
+        val collectionRef = db.collection("Books")
+
+        collectionRef.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    // access the fields of each document
+                    val title = document.getString("title")
+                    val imager = document.getString("imageUrl")
+                    val documentid = document.id
+
+                    println("title: $title")
+                    println("imager: $imager")
+
+                    val book = Book("$title", "$imager")
+                    books.add(book)
+
+
+                    adapter.DataButtonClickListener ={
+                        var intent = Intent(activity, BookViewData::class.java)
+                        intent.putExtra("temptitle", title)
+                        startActivity(intent)
+                    }
+
+                }
+
+                // update the adapter
+                adapter.notifyDataSetChanged()
+            }
+
+    }
+
+
 }

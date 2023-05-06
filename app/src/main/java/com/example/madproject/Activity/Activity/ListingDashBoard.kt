@@ -104,7 +104,6 @@ class ListingDashBoard : AppCompatActivity() {
 
         val collectionRef = firebaseFirestore.collection("Books").whereEqualTo("userId", userid)
 
-
         val recyclerView = findViewById<RecyclerView>(id.recycler_view3)
         recyclerView.layoutManager = LinearLayoutManager(this)
 

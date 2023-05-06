@@ -86,8 +86,12 @@ class Insert_Book : AppCompatActivity() {
         // Set up upload button
         uploadButton.setOnClickListener {
             uploadData()
-            val intent = Intent(this, ListingDashBoard::class.java)
-            startActivity(intent)
+
+            if(imageUri != null){
+                val intent = Intent(this, ListingDashBoard::class.java)
+                startActivity(intent)
+            }
+
         }
 
 
@@ -153,11 +157,8 @@ class Insert_Book : AppCompatActivity() {
 
     // Upload data to Firebase Storage and Firestore
     private fun uploadData() {
-        // Validate image
-        if (imageUri == null) {
-            Toast.makeText(this, "Please select an image", Toast.LENGTH_SHORT).show()
-            return
-        }
+
+//        testinputs()
 
         // Show progress dialog
         progressDialog = ProgressDialog(this)
@@ -219,4 +220,13 @@ class Insert_Book : AppCompatActivity() {
             }
         }
     }
-}
+
+//
+//    private fun testinputs(){
+//        // Validate image
+//        if (imageUri == null) {
+//            Toast.makeText(this, "Please select an image", Toast.LENGTH_SHORT).show()
+//            return
+//        }
+    }
+

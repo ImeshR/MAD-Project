@@ -18,6 +18,12 @@
             android:name=".Activity.Activity.Add_delivery_details"
             android:exported="false" />
         <activity
+            android:name=".Activity.Activity.Home"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.BookViewData"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.CardHandle"
             android:exported="false" />
         <activity
