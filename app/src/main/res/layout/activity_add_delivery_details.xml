@@ -74,7 +74,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/edit_backgrund"
-            android:drawableLeft="@drawable/baseline_home_24"
+            android:drawableLeft="@drawable/baseline_location_on_24"
             android:hint="Zip code"
             android:paddingLeft="10dp"
             android:textStyle="bold" />
@@ -87,23 +87,12 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/edit_backgrund"
-            android:drawableLeft="@drawable/baseline_home_24"
+            android:drawableLeft="@drawable/baseline_location_city_24"
             android:hint="City"
             android:paddingLeft="10dp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/track"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/edit_backgrund"
-            android:drawableLeft="@drawable/baseline_home_24"
-            android:hint="Track number"
-            android:paddingLeft="10dp"
-            android:textStyle="bold" />
+
 
         <EditText
             android:id="@+id/tp"
@@ -113,7 +102,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/edit_backgrund"
-            android:drawableLeft="@drawable/baseline_home_24"
+            android:drawableLeft="@drawable/baseline_local_phone_24"
             android:hint="T.P No"
             android:paddingLeft="10dp"
             android:textStyle="bold" />

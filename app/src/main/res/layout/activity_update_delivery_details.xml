@@ -30,7 +30,7 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="269dp"
-            app:srcCompat="@drawable/updateremov" />
+            app:srcCompat="@drawable/updateimage" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
                 android:layout_height="35dp"
                 android:ems="10"
                 android:inputType="number"
-                android:hint="Track Number"
+                android:hint="T.P No"
                 android:textStyle="bold"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
