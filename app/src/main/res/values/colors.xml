@@ -16,5 +16,8 @@
     <color name="s_yellow">#ffd60a</color>
     <color name="s_lightgreen">#64e764</color>
     <color name="primaryColor">#131A22</color>
+    <color name="s_Edit">#22c55e</color>
+    <color name="s_Remove">#EF4444 </color>
+    <color name="s_addNew">#3981ff </color>
 
 </resources>
