@@ -87,6 +87,13 @@ class Profile : Fragment() {
             startActivity(intent)
         }
 
+        //Navigate to Payment
+        val payment = view.findViewById<Button>(R.id.walletBtn)
+        payment.setOnClickListener {
+            val intent = Intent(activity, payment_profile::class.java)
+            startActivity(intent)
+        }
+
         // Fetch and display user's name
         val logUserName = view.findViewById<TextView>(R.id.logUserName)
         val userId = firebaseAuth.currentUser?.uid
