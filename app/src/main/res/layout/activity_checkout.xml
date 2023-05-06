@@ -11,17 +11,8 @@
         android:id="@+id/linearLayout9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/s_greating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:text="Welcome Back"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/s_userName"
@@ -38,10 +29,10 @@
         android:id="@+id/s_order_detail_box"
         android:layout_width="320dp"
         android:layout_height="370dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/s_order_details_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
 
@@ -56,7 +47,7 @@
         app:srcCompat="@drawable/book2" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/s_orderBook_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
@@ -77,7 +68,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/s_totalBill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
@@ -85,17 +76,86 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/s_order_detail_box"
         app:layout_constraintStart_toStartOf="@+id/s_order_detail_box"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        app:layout_constraintTop_toBottomOf="@+id/s_orderBook_title" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/s_billAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="Rs, 1750,00"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/s_order_detail_box"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/s_order_detail_box"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintTop_toBottomOf="@+id/s_orderBook_title"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/s_order_details_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s_order_detail_box">
 
 
+    </View>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/s_addNewCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/addnewbtn"
+            android:padding="20dp"
+            android:text="Add New Card" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/addnewbtn"
+                android:padding="16dp"
+                android:text="1111222233334444"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_addingbutton"
+        android:padding="20dp"
+        android:text="Pay"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
