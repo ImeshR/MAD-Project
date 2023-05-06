@@ -1,8 +1,11 @@
 package com.example.madproject.Activity.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import com.example.madproject.R
 import com.example.madproject.databinding.ActivityProfileInfoBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -21,6 +24,13 @@ class ProfileInfo : AppCompatActivity() {
         // Initialize Firebase Auth and Firestore
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseFirestore = FirebaseFirestore.getInstance()
+
+        // Update Profile
+        binding.editProfileOnInfo.setOnClickListener {
+            startActivity(
+                Intent(this, ProfileSettings::class.java)
+            )
+        }
 
         // Fetch user data from Firestore
         val user = firebaseAuth.currentUser
