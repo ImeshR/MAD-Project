@@ -88,7 +88,7 @@ class Profile : Fragment() {
         }
 
         //Navigate to Payment
-        val payment = view.findViewById<Button>(R.id.walletBtn)
+        val payment = view.findViewById<ImageView>(R.id.walletBtn)
         payment.setOnClickListener {
             val intent = Intent(activity, payment_profile::class.java)
             startActivity(intent)
