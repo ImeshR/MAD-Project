@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -90,6 +91,12 @@ class Home : Fragment() {
             }
     }
 
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//    }
+
     // fetch books from Firestore and update the adapter
     private fun displaybook(adapter: BookHomeAdapter) {
 
@@ -111,17 +118,32 @@ class Home : Fragment() {
 
 
                     adapter.DataButtonClickListener ={
-                        var intent = Intent(activity, BookViewData::class.java)
-                        intent.putExtra("temptitle", title)
-                        startActivity(intent)
+                        if (title != null) {
+                            replaceFragment(title)
+                        }
                     }
 
-                }
 
+                }
                 // update the adapter
                 adapter.notifyDataSetChanged()
             }
+    }
+//    private fun replaceFragment(fragment: Fragment) {
+//        val fragmentManager = activity?.supportFragmentManager
+//        val fragmentTransaction = fragmentManager?.beginTransaction()
+//        fragmentTransaction?.replace(R.id.homefragment, fragment)
+//        fragmentTransaction?.commit()
+//    }
 
+    private fun replaceFragment(bookTitle: String) {
+        val newFragment = newonedataview()
+        val args = Bundle()
+        args.putString("book_title", bookTitle)
+        newFragment.arguments = args
+        val transaction = activity?.supportFragmentManager?.beginTransaction()
+        transaction?.replace(R.id.homefragment, newFragment)
+        transaction?.commit()
     }
 
 

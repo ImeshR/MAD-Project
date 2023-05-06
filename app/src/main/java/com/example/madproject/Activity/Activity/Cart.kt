@@ -49,6 +49,12 @@ class Cart : Fragment() {
             startActivity(intent)
         }
 
+
+        //price of the book
+        val args = arguments
+        val bookprice = args?.getDouble("book_price")
+        println( "price of the book is $bookprice")
+
         return view
     }
 
