@@ -33,18 +33,18 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:background="@drawable/main_nav_btn" />
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="352dp"
-        android:layout_height="69dp"
-        android:layout_marginBottom="176dp"
-        android:text="The Design of Everyday Things shows that good, usable design is possible. The rules are simple: make things visible, exploit natural relationships that couple function and control, and make intelligent use of constraints"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.682"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textStyle="bold"
-        android:textSize="15dp"/>
+<!--    <TextView-->
+<!--        android:id="@+id/textView16"-->
+<!--        android:layout_width="352dp"-->
+<!--        android:layout_height="69dp"-->
+<!--        android:layout_marginBottom="176dp"-->
+<!--        android:text="The Design of Everyday Things shows that good, usable design is possible. The rules are simple: make things visible, exploit natural relationships that couple function and control, and make intelligent use of constraints"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.682"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="15dp"/>-->
 
     <TextView
         android:id="@+id/textView14"

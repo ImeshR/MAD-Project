@@ -1,5 +1,6 @@
 package com.example.madproject.Activity.Activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -36,6 +37,7 @@ class Profile : Fragment() {
         firebaseFirestore = FirebaseFirestore.getInstance()
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,7 +73,7 @@ class Profile : Fragment() {
             startActivity(intent)
         }
 
-        //Navigate to Profile Settings
+        //Navigate to Update Profile
         val profileSettings = view.findViewById<Button>(R.id.profileSettingsBtn)
         profileSettings.setOnClickListener {
             val intent = Intent(activity, ProfileSettings::class.java)

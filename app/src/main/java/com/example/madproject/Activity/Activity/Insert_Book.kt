@@ -86,13 +86,15 @@ class Insert_Book : AppCompatActivity() {
         // Set up upload button
         uploadButton.setOnClickListener {
             uploadData()
+            val intent = Intent(this, ListingDashBoard::class.java)
+            startActivity(intent)
         }
 
 
         //print user id on log cat
         println("User ID: $userid")
 
-        //for spinner change onlye AL and University
+        //for spinner change only AL and University
 
 
         val adapter = ArrayAdapter.createFromResource(this, R.array.spinner_options, android.R.layout.simple_spinner_item)
@@ -131,10 +133,6 @@ class Insert_Book : AppCompatActivity() {
                 spinner2_university.visibility = View.GONE
             }
         }
-
-
-
-
 
     }
 
