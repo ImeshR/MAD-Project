@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
         android:layout_width="match_parent"
         android:layout_height="650dp"
         android:layout_marginTop="40dp"
@@ -31,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <ScrollView
+            android:id="@+id/scrollView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -58,6 +60,7 @@
                     android:layout_height="250dp"
                     android:layout_marginLeft="80dp"
                     android:layout_marginTop="30dp"
+                    android:contextClickable="true"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/bg_gradient" />
 

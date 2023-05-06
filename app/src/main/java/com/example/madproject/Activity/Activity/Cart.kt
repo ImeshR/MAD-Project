@@ -43,10 +43,9 @@ class Cart : Fragment() {
 
         // find the button in the layout
         val button = view.findViewById<Button>(R.id.addressbtn)
-
         // set a click listener on the button to move to AnotherActivity
         button.setOnClickListener {
-            val intent = Intent(activity,Add_delivery_details::class.java)
+            val intent = Intent(activity, Add_delivery_details::class.java)
             startActivity(intent)
         }
 

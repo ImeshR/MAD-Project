@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MAD Project</string>
+    <string name="app_name">Keep It</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mainNavText">Discover the Future Book and Note Searching !</string>
@@ -50,5 +50,8 @@
         <item>Medical</item>
         <item>Science</item>
     </string-array>
+
+
+    <string name="listing_dash_title2"><u>Here Is Your Listed Books</u></string>
 
 </resources>
