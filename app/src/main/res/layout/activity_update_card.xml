@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor"
-    tools:context=".Activity.Activity.AddNewCard">
+    tools:context=".Activity.Activity.UpdateCard">
 
     <ImageView
         android:id="@+id/backToCardHandle"
@@ -35,9 +35,9 @@
             android:fontFamily="@font/poppins_medium"
             android:paddingLeft="15dp"
             android:paddingTop="5dp"
-            android:text="Add New\nCard"
+            android:text="Update\nCard"
             android:textColor="@color/white"
-            android:textSize="28dp" />
+            android:textSize="30dp" />
 
         <ImageView
             android:id="@+id/imageView14"
@@ -71,7 +71,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/CardHolderName"
+            android:id="@+id/updateCardHolderName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/inputbox_outline"
@@ -90,7 +90,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/CardNumber"
+            android:id="@+id/updateCardNumber"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/inputbox_outline"
@@ -133,7 +133,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/expMonth"
+                            android:id="@+id/updateExpMonth"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginRight="10dp"
@@ -144,7 +144,7 @@
                             android:paddingLeft="10dp" />
 
                         <EditText
-                            android:id="@+id/expYear"
+                            android:id="@+id/updateExpYear"
                             android:layout_width="wrap_content"
                             android:layout_height="50dp"
                             android:layout_weight="1"
@@ -171,7 +171,7 @@
                         android:textSize="20dp" />
 
                     <EditText
-                        android:id="@+id/cvv"
+                        android:id="@+id/updateCvv"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/inputbox_outline"
@@ -190,12 +190,12 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/addNewCardBtn"
+                android:id="@+id/updateCardBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/main_nav_btn"
                 android:fontFamily="@font/poppins"
-                android:text="Add Card"
+                android:text="Update Card"
                 android:textColor="@color/white"
                 android:textSize="20dp" />
         </LinearLayout>
