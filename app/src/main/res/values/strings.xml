@@ -8,6 +8,8 @@
     <string name="SignUp">SignUp</string>
     <string name="loginWelcomeMsg">Welcome \nBack !</string>
     <string name="linktoLogin">Already have an account?</string>
+    <string name="delete_icon_description">Delete item</string>
+
 
     <string name="spinner_prompt">Select an option</string>
     <string-array name="spinner_options">
