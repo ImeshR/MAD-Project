@@ -2,23 +2,42 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homefragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/homefragment"
+    android:background="@color/primaryColor"
     tools:context=".Activity.Activity.Home">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Find Your Book"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="66dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/profileimg_large" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="630dp"
         android:layout_marginTop="100dp"
-        android:background="#881414"
+        android:background="@drawable/s_profilepart"
         android:padding="20dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/homerecycleview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="#E4DBDB"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"

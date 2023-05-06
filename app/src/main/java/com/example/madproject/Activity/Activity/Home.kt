@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
@@ -59,7 +60,8 @@ class Home : Fragment() {
 
         // call recyclerView in fragment
         val recyclerView = view.findViewById<RecyclerView>(R.id.homerecycleview)
-        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.layoutManager = GridLayoutManager(activity, 3)
+
 
         // Create an instance of the adapter and set it to the recyclerView
         val adapter = BookHomeAdapter(books)

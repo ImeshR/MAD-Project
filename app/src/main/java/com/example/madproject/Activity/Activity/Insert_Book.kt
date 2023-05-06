@@ -31,7 +31,7 @@ class Insert_Book : AppCompatActivity() {
     private lateinit var spinner2_university: Spinner
 
 
-    lateinit var streamname : String
+    lateinit var streamname: String
 
     private lateinit var subCategorySpinner: AutoCompleteTextView
     private var categoryAdapter: ArrayAdapter<String>? = null
@@ -46,7 +46,7 @@ class Insert_Book : AppCompatActivity() {
     private lateinit var firestoreDb: FirebaseFirestore
 
 
-    private lateinit var userid : String
+    private lateinit var userid: String
     private lateinit var firebaseAuth: FirebaseAuth
 
     // Upload progress dialog
@@ -68,7 +68,6 @@ class Insert_Book : AppCompatActivity() {
         spinner2_university = findViewById(R.id.spinner2_university)
 
 
-
         // Initialize Firebase references
         storageRef = FirebaseStorage.getInstance().reference
         firestoreDb = FirebaseFirestore.getInstance()
@@ -87,7 +86,7 @@ class Insert_Book : AppCompatActivity() {
         uploadButton.setOnClickListener {
             uploadData()
 
-            if(imageUri != null){
+            if (imageUri != null) {
                 val intent = Intent(this, ListingDashBoard::class.java)
                 startActivity(intent)
             }
@@ -101,22 +100,39 @@ class Insert_Book : AppCompatActivity() {
         //for spinner change only AL and University
 
 
-        val adapter = ArrayAdapter.createFromResource(this, R.array.spinner_options, android.R.layout.simple_spinner_item)
+        val adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.spinner_options,
+            android.R.layout.simple_spinner_item
+        )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         categorySpinner.adapter = adapter
 
         val spinner2_al = findViewById<Spinner>(R.id.spinner2_al)
-        val adapter2_al = ArrayAdapter.createFromResource(this, R.array.spinner2_options_al, android.R.layout.simple_spinner_item)
+        val adapter2_al = ArrayAdapter.createFromResource(
+            this,
+            R.array.spinner2_options_al,
+            android.R.layout.simple_spinner_item
+        )
         adapter2_al.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner2_al.adapter = adapter2_al
 
         val spinner2_university = findViewById<Spinner>(R.id.spinner2_university)
-        val adapter2_university = ArrayAdapter.createFromResource(this, R.array.spinner2_options_university, android.R.layout.simple_spinner_item)
+        val adapter2_university = ArrayAdapter.createFromResource(
+            this,
+            R.array.spinner2_options_university,
+            android.R.layout.simple_spinner_item
+        )
         adapter2_university.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner2_university.adapter = adapter2_university
 
         categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 val selectedItem = parent.getItemAtPosition(position) as String
                 if (selectedItem == "AL") {
                     spinner2_al.visibility = View.VISIBLE
@@ -158,7 +174,8 @@ class Insert_Book : AppCompatActivity() {
     // Upload data to Firebase Storage and Firestore
     private fun uploadData() {
 
-//        testinputs()
+        //unit testing
+        testinputs()
 
         // Show progress dialog
         progressDialog = ProgressDialog(this)
@@ -221,12 +238,13 @@ class Insert_Book : AppCompatActivity() {
         }
     }
 
-//
-//    private fun testinputs(){
-//        // Validate image
-//        if (imageUri == null) {
-//            Toast.makeText(this, "Please select an image", Toast.LENGTH_SHORT).show()
-//            return
-//        }
+
+    private fun testinputs() {
+        // Validate image
+        if (imageUri == null) {
+            Toast.makeText(this, "Please select an image", Toast.LENGTH_SHORT).show()
+            return
+        }
     }
+}
 
