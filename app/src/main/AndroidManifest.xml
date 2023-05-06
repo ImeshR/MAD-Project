@@ -18,6 +18,9 @@
             android:name=".Activity.Activity.UpdateCard"
             android:exported="false" />
         <activity
+            android:name=".Activity.Activity.UpdateDeliveryDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.AddNewCard"
             android:exported="false" />
         <activity
