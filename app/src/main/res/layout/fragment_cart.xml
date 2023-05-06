@@ -39,8 +39,8 @@
                         android:layout_marginBottom="6dp"
                         android:text="MY CART"
                         android:textAlignment="center"
-                        android:textColor="#F32222 "
-                        android:textSize="20sp"
+                        android:textColor="#1E1B1B"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
@@ -56,16 +56,13 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="80dp"
-                    android:padding="40dp"
-
                     android:layout_marginEnd="15dp"
+
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/cart_banner"
+                    android:background="@drawable/checkout_btn"
                     android:elevation="18dp"
-                    android:orientation="vertical">
-
-
-
+                    android:orientation="vertical"
+                    android:padding="40dp">
 
 
                     <LinearLayout
@@ -80,72 +77,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
                             android:layout_weight="1"
+
+                            android:gravity="center"
                             android:text="CART TOTAL"
-                            android:textSize="18sp"
-                           />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="100dp"
-                            android:layout_weight="1"
-                            android:text="$"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        tools:layout_marginTop="10dp">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_weight="1"
-                            android:text="DELIVERY"
-                            android:textSize="18sp"
-                           />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="120dp"
-                            android:layout_weight="1"
-                            android:text="$"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_weight="1"
-                            android:text="TAX"
-                            android:textSize="18sp"
-                             />
-
-                        <TextView
-
-                            android:layout_width="28dp"
-                            android:layout_height="wrap_content"
-                            android:text="$"
-                            android:textSize="18sp"
+                            android:textSize="25dp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -164,7 +99,7 @@
                             android:layout_weight="1"
                             android:text="TOTAL"
 
-                            android:textSize="20sp"
+                            android:textSize="25sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -174,7 +109,7 @@
                             android:layout_marginLeft="125dp"
                             android:layout_weight="1"
                             android:text="$"
-                            android:textSize="18sp"
+                            android:textSize="25sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
