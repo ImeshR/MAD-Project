@@ -1,5 +1,6 @@
 package com.example.madproject.Activity.Activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +9,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.madproject.R
+import com.example.madproject.R.id
+import com.example.madproject.R.layout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -20,7 +22,7 @@ class ListingDashBoard : AppCompatActivity() {
 
     private lateinit var  navbtnUpload: ImageView
     private lateinit var navbtnDelete: ImageView
-    private lateinit var recycler_view : RecyclerView
+    private  lateinit var navbtnup : ImageView
 
     val db = Firebase.firestore
     private lateinit var userid : String
@@ -30,37 +32,32 @@ class ListingDashBoard : AppCompatActivity() {
     var storage = FirebaseStorage.getInstance()
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.madproject.R.layout.activity_listing_dash_board)
+        setContentView(layout.activity_listing_dash_board)
         displayBookDetails()
         getCount()
 
 
-        navbtnUpload  = findViewById(com.example.madproject.R.id.addbook)
-        navbtnDelete = findViewById(com.example.madproject.R.id.deletebook)
+        navbtnUpload  = findViewById(id.addbook)
+        navbtnDelete = findViewById(id.deletebook)
+        navbtnup = findViewById(id.updatenav)
 
         navbtnUpload.setOnClickListener {
-            val intent = Intent(this, Insert_Book::class.java)
-            startActivity(intent)
+            val intent1 = Intent(this, Insert_Book::class.java)
+            startActivity(intent1)
         }
+
         navbtnDelete.setOnClickListener {
-            val intent = Intent(this, DeleteBookList::class.java)
-            startActivity(intent)
+            val intent2 = Intent(this, DeleteBookList::class.java)
+            startActivity(intent2)
         }
 
-//        recycler_view = findViewById(R.id.recycler_view)
-//
-//        recycler_view.layoutManager = LinearLayoutManager(this)
-//
-//        val books = listOf(
-//            Book("Book 1",  "https://firebasestorage.googleapis.com/v0/b/madproject-7a05c.appspot.com/o/images%2F417a1c96-b20d-4279-84d1-74993d9ba984?alt=media&token=bb382dd9-ed6d-407e-8534-c0a2ac033852"),
-//            Book("Book 2",  "https://firebasestorage.googleapis.com/v0/b/madproject-7a05c.appspot.com/o/images%2F9fcda4c6-5de1-427f-8536-f30dfe22fb1c?alt=media&token=ee6620b5-3073-4cff-8076-dfe926010432")
-//        )
-//
-//        val adapter = BookAdapter(books)
-//        recycler_view .adapter = adapter
-
+        navbtnup.setOnClickListener {
+            val intent3 = Intent(this, UpdateBook::class.java)
+            startActivity(intent3)
+        }
     }
 
     //get count
@@ -68,7 +65,6 @@ class ListingDashBoard : AppCompatActivity() {
         // specify the collection name and user id
         firebaseAuth = FirebaseAuth.getInstance()
         userid = firebaseAuth.currentUser?.uid ?: ""
-
 
 
         println("User ID: $userid")
@@ -82,7 +78,7 @@ class ListingDashBoard : AppCompatActivity() {
 
 
             // update the TextView with the count value
-            val countlis = findViewById<TextView>(com.example.madproject.R.id.countlist)
+            val countlis = findViewById<TextView>(id.countlist)
             countlis.text = count.toString()
 
         }.addOnFailureListener { e ->
@@ -109,7 +105,7 @@ class ListingDashBoard : AppCompatActivity() {
         val collectionRef = firebaseFirestore.collection("Books").whereEqualTo("userId", userid)
 
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val recyclerView = findViewById<RecyclerView>(id.recycler_view3)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val books = mutableListOf<Book>()
@@ -122,8 +118,6 @@ class ListingDashBoard : AppCompatActivity() {
 
                 val book = Book("$title", "$imager")
                 books.add(book)
-
-
             }
             val adapter = BookAdapter(books)
             recyclerView.adapter = adapter

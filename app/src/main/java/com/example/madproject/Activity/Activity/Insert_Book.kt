@@ -94,7 +94,7 @@ class Insert_Book : AppCompatActivity() {
         //print user id on log cat
         println("User ID: $userid")
 
-        //for spinner change onlye AL and University
+        //for spinner change only AL and University
 
 
         val adapter = ArrayAdapter.createFromResource(this, R.array.spinner_options, android.R.layout.simple_spinner_item)

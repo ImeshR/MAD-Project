@@ -7,11 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
 
-class BookDeleteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class BookUpdateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val titleTextView: TextView = itemView.findViewById(R.id.book_title)
     val imageView: ImageView = itemView.findViewById(R.id.book_image)
-    val deleteButton: ImageButton = itemView.findViewById(R.id.updatebtnEsh)
+    val updateButton: ImageButton = itemView.findViewById(R.id.updatebtnEsh)
 
 }
-
-
