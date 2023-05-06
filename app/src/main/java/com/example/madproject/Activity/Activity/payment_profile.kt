@@ -11,8 +11,6 @@ class payment_profile : AppCompatActivity() {
 
     lateinit var  navpay : Constraint
 
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_profile)
