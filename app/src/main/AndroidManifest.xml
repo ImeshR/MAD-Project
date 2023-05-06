@@ -14,7 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
-        <activity 
+        <activity
+            android:name=".Activity.Activity.UpdateCard"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.AddNewCard"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.Add_delivery_details"
             android:exported="false" />
         <activity

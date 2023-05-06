@@ -11,7 +11,7 @@ import com.example.madproject.databinding.ActivityCardAddFormBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class CardAddFormActivity : AppCompatActivity() {
+class AddNewCard : AppCompatActivity() {
 
     lateinit var binding: ActivityCardAddFormBinding
     private lateinit var firebaseAuth: FirebaseAuth
@@ -36,6 +36,7 @@ class CardAddFormActivity : AppCompatActivity() {
 
             if (validateInput(cardHolderName, cardNumber, expMonth, expYear, cvv)) {
                 val cardDetailsData = CardDetailsData(
+                    userId = firebaseAuth.currentUser?.uid,
                     cardHolderName = cardHolderName,
                     CardNumber = cardNumber.toLong(),
                     expMonth = expMonth.toInt(),
@@ -45,6 +46,12 @@ class CardAddFormActivity : AppCompatActivity() {
 
                 addCardToFirestore(cardDetailsData)
             }
+        }
+
+        binding.backToCardHandle.setOnClickListener {
+            startActivity(
+                Intent(this, CardHandle::class.java)
+            )
         }
     }
 
@@ -68,8 +75,8 @@ class CardAddFormActivity : AppCompatActivity() {
         }
 
         val expMonthInt = expMonth.toIntOrNull()
-        if (expMonthInt == null || expMonthInt !in 1..31) {
-            Toast.makeText(this, "Exp date must be between 1 to 31", Toast.LENGTH_SHORT).show()
+        if (expMonthInt == null || expMonthInt !in 1..12) {
+            Toast.makeText(this, "Exp month must be between 1 to 12", Toast.LENGTH_SHORT).show()
             return false
         }
 
@@ -87,7 +94,6 @@ class CardAddFormActivity : AppCompatActivity() {
     }
 
     private fun addCardToFirestore(cardDetailsData: CardDetailsData) {
-        // Add the cardDetailsData object to Firestore using the desired collection and document references
         val collectionRef = firestore.collection("cards")
         collectionRef.add(cardDetailsData)
             .addOnSuccessListener {
