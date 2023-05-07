@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-      
+
         //Normal Handler is deprecated , so we have to change the code little bit
 
         // Handler().postDelayed({
