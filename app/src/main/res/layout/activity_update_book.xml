@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Listing Dashbord"
+        android:text="Update Your Listings"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"

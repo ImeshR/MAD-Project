@@ -40,7 +40,7 @@ class CardHandle : AppCompatActivity() {
 
         binding.addNewWallet.setOnClickListener {
             startActivity(
-                Intent(this, AddNewCard::class.java)
+                Intent(this, UpdateCard::class.java)
             )
         }
     }
