@@ -18,8 +18,7 @@ class SplashActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        // we used the postDelayed(Runnable, time) method
-        // to send a message with a delayed time.
+      
         //Normal Handler is deprecated , so we have to change the code little bit
 
         // Handler().postDelayed({
