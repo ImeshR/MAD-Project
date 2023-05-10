@@ -45,6 +45,7 @@ class Category : Fragment() {
 
         val button1 = view.findViewById<Button>(R.id.albtn)
         val button2 = view.findViewById<Button>(R.id.unibtn)
+        replaceFragment(Al_book_category())
 
         button1.setOnClickListener {
             replaceFragment(Al_book_category())

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/primaryColor"
     tools:context=".Activity.Activity.Category">
 
     <TextView
@@ -12,18 +12,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Category"
+        android:textColor="#FFFFFF"
         android:textSize="24sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="60dp">
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,17 +34,27 @@
 
             <Button
                 android:id="@+id/albtn"
-                android:layout_width="wrap_content"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:text="A/l" />
+                android:background="@drawable/s_addnew"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="A/l"
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/unibtn"
-                android:layout_width="wrap_content"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:text="Uni" />
+                android:background="@drawable/s_addnew"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Uni"
+                android:textSize="20sp" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -49,8 +62,8 @@
     <FrameLayout
         android:id="@+id/category_list_container"
         android:layout_width="match_parent"
-        android:layout_height="630dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="620dp"
+        android:layout_marginTop="130dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">

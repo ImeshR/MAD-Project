@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Activity.Al_book_category" >
+    android:background="@drawable/s_profilepart"
+    tools:context=".Activity.Activity.Al_book_category">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,19 +20,22 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="650dp"
+                android:layout_marginTop="20dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/MathsView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="48dp"
-                    android:paddingLeft="22dp"
+                    android:layout_height="0dp"
+                    android:paddingLeft="10dp"
                     android:paddingTop="22dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:spanCount="3" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
