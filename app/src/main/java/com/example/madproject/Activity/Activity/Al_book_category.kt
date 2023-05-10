@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
 import com.google.firebase.auth.FirebaseAuth
@@ -53,20 +53,15 @@ class Al_book_category : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_al_book_category, container, false)
+        val view = inflater.inflate(R.layout.fragment_al_book_category, container, false)
 
         // call recyclerView in fragment
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.MathsView)
-        if (recyclerView != null) {
-            recyclerView.layoutManager =
-                LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        }
+        val recyclerView = view.findViewById<RecyclerView>(R.id.MathsView)
+        recyclerView.layoutManager = GridLayoutManager(activity, 3)
 
         // Create an instance of the adapter and set it to the recyclerView
         val adapter = BookHomeAdapter(books)
-        if (recyclerView != null) {
-            recyclerView.adapter = adapter
-        }
+        recyclerView.adapter = adapter
 
         // call the displaybook() method to fetch books from Firestore and update the adapter
         displaybook(adapter)
@@ -111,10 +106,7 @@ class Al_book_category : Fragment() {
 
                     val book = Book("$title", "$imager")
                     books.add(book)
-
                 }
-
-
             }
         // update the adapter
         adapter.notifyDataSetChanged()
