@@ -15,6 +15,8 @@ class UpdateCard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_card)
 
+        val profileName=intent.getStringExtra("cardID")
+
         binding = ActivityUpdateCardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
