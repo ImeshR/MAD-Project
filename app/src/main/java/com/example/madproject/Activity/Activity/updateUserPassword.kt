@@ -33,6 +33,13 @@ class updateUserPassword : AppCompatActivity() {
         binding = ActivityUpdateUserPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //I want to navigate to the privacy page
+        binding.navtoProvacy.setOnClickListener {
+            startActivity(
+                Intent(this, Privacy::class.java)
+            )
+        }
+
         val dprePass: EditText = findViewById(R.id.dprePass)
         val dNewpass: EditText = findViewById(R.id.dNewpass)
         val dConPass: EditText = findViewById(R.id.dConPass)
