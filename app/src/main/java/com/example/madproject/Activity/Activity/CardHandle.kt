@@ -3,6 +3,7 @@ package com.example.madproject.Activity.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
@@ -24,7 +25,16 @@ class CardHandle : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_card_handle)
 
+        binding = ActivityCardHandleBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         retrieveCardDetails()
+
+        binding.addNewWallet.setOnClickListener {
+            startActivity(
+                Intent(this, AddNewCard::class.java)
+            )
+        }
 
 //        binding = ActivityCardHandleBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
@@ -125,6 +135,19 @@ class CardHandle : AppCompatActivity() {
 
     private fun deleteCard(cardNum: Number?) {
 
+        firebaseFirestore.collection("cards")
+            .whereEqualTo("userId", userid)
+            .whereEqualTo("cardNumber", cardNum)
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                for (document in querySnapshot) {
+                    document.reference.delete()
+                }
+                Toast.makeText(this, "Card deleted successfully", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Failed to delete card: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
 
     }
 
