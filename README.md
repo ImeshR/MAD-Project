@@ -62,7 +62,21 @@ resource for Sri Lankan students looking for affordable educational materials.
   </tr>
   <tr>
     <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/UpdatePassword.png"></td>
-    <td><img src=""></td>
-    <td><img src=""></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Book%20Listing%20Page.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Book%20Adding%20Page.png"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Update%20Listing%20Page.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Delete%20Listing%20Page.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Book%20Adding%20Page.png"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Wallet%20Page.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Add%20New%20Card%20Page.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Update%20Card%20Page.png"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Add%20Delivary%20Details%20Page.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Checkout%20Page.png"></td>
   </tr>
 </table>
