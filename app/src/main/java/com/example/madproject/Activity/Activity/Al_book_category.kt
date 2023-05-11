@@ -46,6 +46,7 @@ class Al_book_category : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        displaybook()
     }
 
     override fun onCreateView(
@@ -64,7 +65,7 @@ class Al_book_category : Fragment() {
         recyclerView.adapter = adapter
 
         // call the displaybook() method to fetch books from Firestore and update the adapter
-        displaybook(adapter)
+
 
         return view
     }
@@ -89,7 +90,7 @@ class Al_book_category : Fragment() {
             }
     }
 
-    private fun displaybook(adapter: BookHomeAdapter) {
+    private fun displaybook() {
 
         val collectionRef = db.collection("Books").whereEqualTo("category", "AL")
 
@@ -109,6 +110,6 @@ class Al_book_category : Fragment() {
                 }
             }
         // update the adapter
-        adapter.notifyDataSetChanged()
+//        adapter.notifyDataSetChanged()
     }
 }
