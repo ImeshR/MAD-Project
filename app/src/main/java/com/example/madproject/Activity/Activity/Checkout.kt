@@ -38,7 +38,7 @@ class Checkout : AppCompatActivity() {
         }
 
         binding.editDilivaryDetails.setOnClickListener {
-            startActivity(Intent(this, UpdateDeliveryDetailsActivity::class.java))
+            startActivity(Intent(this,updatedPayment::class.java))
         }
     }
 
