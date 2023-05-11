@@ -141,6 +141,7 @@
                             android:background="@drawable/inputbox_outline"
                             android:ems="10"
                             android:inputType="date"
+                            android:hint="month"
                             android:paddingLeft="10dp" />
 
                         <EditText
@@ -151,6 +152,7 @@
                             android:background="@drawable/inputbox_outline"
                             android:ems="10"
                             android:inputType="date"
+                            android:hint="year"
                             android:paddingLeft="10dp" />
                     </LinearLayout>
 

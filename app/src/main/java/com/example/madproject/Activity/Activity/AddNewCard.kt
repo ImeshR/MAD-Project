@@ -46,6 +46,10 @@ class AddNewCard : AppCompatActivity() {
 
                 addCardToFirestore(cardDetailsData)
             }
+
+            startActivity(
+                Intent(this, CardHandle::class.java)
+            )
         }
 
         binding.backToCardHandle.setOnClickListener {
