@@ -88,16 +88,16 @@
                 android:id="@+id/Track"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:ems="10"
-                android:inputType="number"
-                android:hint="Track Number"
-                android:textStyle="bold"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/edit_backgrund"
                 android:drawableLeft="@drawable/baseline_post_add_24"
-                android:paddingLeft="10dp"/>
+                android:ems="10"
+                android:hint="T.P"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/updatebtn"

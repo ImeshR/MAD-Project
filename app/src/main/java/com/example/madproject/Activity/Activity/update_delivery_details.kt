@@ -1,104 +1,94 @@
 package com.example.madproject.Activity.Activity
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.madproject.R
-import com.example.madproject.databinding.ActivityUpdateDeliveryDetailsBinding
-import com.google.firebase.database.FirebaseDatabase
+import com.example.madproject.databinding.ActivityCheckoutBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
-class UpdateDeliveryDetailsActivity : AppCompatActivity() {
+class updatedPayment : AppCompatActivity() {
 
-    private lateinit var address: EditText
-    private lateinit var zip: EditText
-    private lateinit var city: EditText
-    private lateinit var track: EditText
-    private lateinit var updatebtn: Button
-
-    private val database = FirebaseDatabase.getInstance()
-    private val deliveryDetailsRef = database.getReference("delivery_details")
-    private lateinit var binding: ActivityUpdateDeliveryDetailsBinding
+    private lateinit var binding: ActivityCheckoutBinding
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_update_delivery_details)
-
-        binding = ActivityUpdateDeliveryDetailsBinding.inflate(layoutInflater)
+        binding = ActivityCheckoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize the EditText fields and the checkout button
-        address = findViewById(R.id.Address)
-        zip = findViewById(R.id.Zip)
-        city = findViewById(R.id.City)
-        track= findViewById(R.id.Track)
-        updatebtn = findViewById(R.id.updatebtn)
+        firestore = FirebaseFirestore.getInstance()
 
-        // Get the ID of the delivery details to be updated
-        val deliveryDetailsId = intent.getStringExtra("deliveryDetailsId")
+        val address = intent.getStringExtra("address")
+        val zip = intent.getStringExtra("zip")
+        val city = intent.getStringExtra("city")
+        val tp = intent.getStringExtra("tp")
+        val price = intent.getStringExtra("checkoutprice")
 
-        // Retrieve the current delivery details from Firebase
-        if (deliveryDetailsId != null) {
-            deliveryDetailsRef.child(deliveryDetailsId).get()
-                .addOnSuccessListener { dataSnapshot ->
-                    if (dataSnapshot.exists()) {
-                        val deliveryDetails = dataSnapshot.value as Map<*, *>
-                        address.setText(deliveryDetails["address"].toString())
-                        zip.setText(deliveryDetails["zip"].toString())
-                        city.setText(deliveryDetails["city"].toString())
-                        track.setText(deliveryDetails["track"].toString())
+        binding.checkoutaddress.text = address
+        binding.checoutzip.text = zip
+        binding.checkoutcity.text = city
+        binding.checkouttp.text = tp
+        binding.checkoutprice.text = price
 
-                    } else {
-                        Toast.makeText(this, "Failed to retrieve delivery details", Toast.LENGTH_SHORT).show()
-                    }
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Failed to retrieve delivery details", Toast.LENGTH_SHORT).show()
-                }
+        binding.checkoutpaymentbtn.setOnClickListener {
+            // Perform payment processing and data insertion here
+            updatePaymentData(address, zip, city, tp, price)
         }
 
 
-        binding.updatebtn.setOnClickListener {
-            Log.d("Add_delivery_details", "Checkout button clicked")
-            Toast.makeText(this, "Delivery details stored successfully", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, Checkout::class.java))
-        }
+    }
 
+    private fun updatePaymentData(
+        address: String?,
+        zip: String?,
+        city: String?,
+        tp: String?,
+        price: String?
+    ) {
+        val paymentQuery = firestore.collection("payments")
+            .whereEqualTo("address", address)
+            .whereEqualTo("zip", zip)
+            .whereEqualTo("city", city)
+            .whereEqualTo("tp", tp)
 
-
-        // Set an OnClickListener on the update button
-//        updatebtn.setOnClickListener {
-//
-//            // Get the text from the EditText fields
-//            val address = address.text.toString().trim()
-//            val zip = zip.text.toString().trim()
-//            val city = city.text.toString().trim()
-//            val track = track.text.toString().trim()
-//
-//
-//            // Create a map of the delivery details to be updated
-//            val updateMap = hashMapOf<String, Any>(
-//                "address" to address,
-//                "zip" to zip,
-//                "city" to city,
-//                "track" to track,
-//
-//            )
-//
-//            // Update the delivery details in Firebase
-//            if (deliveryDetailsId != null) {
-//                deliveryDetailsRef.child(deliveryDetailsId).updateChildren(updateMap)
-//                    .addOnCompleteListener { task ->
-//                        if (task.isSuccessful) {
-//                            Toast.makeText(this, " updated successfully", Toast.LENGTH_SHORT).show()
-//                        } else {
-//                            Toast.makeText(this, "Failed to update ", Toast.LENGTH_SHORT).show()
-//                        }
-//                    }
-//            }
-//        }
+        paymentQuery.get()
+            .addOnSuccessListener { querySnapshot ->
+                if (querySnapshot.documents.isNotEmpty()) {
+                    // If the payment exists, update its data
+                    val paymentDocument = querySnapshot.documents[0]
+                    val paymentId = paymentDocument.id
+//                    val updatedPayment = hashMapOf(
+//                        "address" to address,
+//                        "zip" to zip,
+//                        "city" to city,
+//                        "tp" to tp,
+//                        "price" to price
+//                    )
+                    paymentDocument.reference.update( mapOf(
+                        "address" to address,
+                        "zip" to zip,
+                        "city" to city,
+                        "tp" to tp,
+                        "price" to price
+                    ))
+                        .addOnSuccessListener {
+                            Log.d("Checkout", "Payment data updated successfully")
+                            // Handle successful update, e.g., display a success message
+                        }
+                        .addOnFailureListener { e ->
+                            Log.e("Checkout", "Error updating payment data", e)
+                            // Handle update failure, e.g., display an error message
+                        }
+                } else {
+                    // If the payment doesn't exist, display an error message or take appropriate action
+                    Log.e("Checkout", "Payment data not found for update")
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("Checkout", "Error checking payment existence", e)
+                // Handle the error
+            }
     }
 }

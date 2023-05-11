@@ -33,7 +33,6 @@
             android:id="@+id/textView34"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_medium"
             android:text="Wallet"
             android:textColor="@color/white"
             android:textSize="30dp" />
@@ -42,7 +41,6 @@
             android:id="@+id/textView33"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
             android:text="Card Details"
             android:textColor="@color/white"
             android:textSize="17dp" />
@@ -69,7 +67,7 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="500dp"
             android:fillViewport="true">
 
             <androidx.recyclerview.widget.RecyclerView

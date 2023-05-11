@@ -178,6 +178,7 @@ class newonedataview : Fragment() {
         val newFragment = Cart()
         val args = Bundle()
         args.putDouble("book_price", bookprice)
+
         newFragment.arguments = args
         val transaction = activity?.supportFragmentManager?.beginTransaction()
         transaction?.replace(R.id.homefragment, newFragment)

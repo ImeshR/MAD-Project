@@ -42,20 +42,25 @@ class Cart : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_cart, container, false)
 
+        val args = arguments
+        val bookprice = args?.getDouble("book_price")
+        println( "price of the book is $bookprice")
+
+
         // find the button in the layout
         val button = view.findViewById<Button>(R.id.addressbtn)
         // set a click listener on the button to move to AnotherActivity
         button.setOnClickListener {
             val intent = Intent(activity, Add_delivery_details::class.java)
+
+            intent.putExtra("price",bookprice.toString() )
             startActivity(intent)
 
         }
 
 
         //price of the book
-        val args = arguments
-        val bookprice = args?.getDouble("book_price")
-        println( "price of the book is $bookprice")
+
 
         return view
     }

@@ -9,71 +9,53 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.madproject.R
 import com.example.madproject.databinding.ActivityAddDeliveryDetailsBinding
-import com.google.firebase.database.FirebaseDatabase
 
 class Add_delivery_details : AppCompatActivity() {
 
     private lateinit var address: EditText
     private lateinit var zip: EditText
     private lateinit var city: EditText
-    private lateinit var track: EditText
     private lateinit var tp: EditText
     private lateinit var checkout: Button
     private lateinit var binding: ActivityAddDeliveryDetailsBinding
 
-    private val database = FirebaseDatabase.getInstance()
-    private val deliveryDetailsRef = database.getReference("delivery_details")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_delivery_details)
-
         binding = ActivityAddDeliveryDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.navcheckout.setOnClickListener {
+        address = binding.address
+        zip = binding.zip
+        city = binding.city
+        tp = binding.tp
+        checkout = binding.navcheckout
+
+
+
+
+        val price = intent.getStringExtra("price")
+        Log.d("TAG", "Received Value: $price")
+
+        checkout.setOnClickListener {
             Log.d("Add_delivery_details", "Checkout button clicked")
-            Toast.makeText(this, "Delivery details stored successfully", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, Checkout::class.java))
+
+            val inputAddress = address.text.toString()
+            val inputZip = zip.text.toString()
+            val inputCity = city.text.toString()
+            val inputTp = tp.text.toString()
+
+            Log.d("Add_delivery_details", "Address: $inputAddress")
+            Log.d("Add_delivery_details", "Zip: $inputZip")
+            Log.d("Add_delivery_details", "City: $inputCity")
+            Log.d("Add_delivery_details", "TP: $inputTp")
+
+            val intent = Intent(this, Checkout::class.java)
+            intent.putExtra("address", inputAddress)
+            intent.putExtra("zip", inputZip)
+            intent.putExtra("city", inputCity)
+            intent.putExtra("tp", inputTp)
+            intent.putExtra("checkoutprice",price)
+            startActivity(intent)
         }
-
-        // Initialize the EditText fields and the checkout button
-        address = findViewById(R.id.address)
-        zip = findViewById(R.id.zip)
-        city = findViewById(R.id.city)
-        tp = findViewById(R.id.tp)
-        checkout = findViewById(R.id.navcheckout)
-
-
-        // Set an OnClickListener on the checkout button
-//        checkout.setOnClickListener {
-//            // Get the text from the EditText fields
-//            val address = address.text.toString().trim()
-//            val zip = zip.text.toString().trim()
-//            val city = city.text.toString().trim()
-//            val track = track.text.toString().trim()
-//            val tp = tp.text.toString().trim()
-//
-//            // Create a map of the delivery details
-//            val deliveryDetails = hashMapOf(
-//                "address" to address,
-//                "zip" to zip,
-//                "city" to city,
-//                "track" to track,
-//                "tp" to tp
-//            )
-//
-//            // Store the delivery details in Firebase
-//            // Store the delivery details in Firebase
-//            deliveryDetailsRef.push().setValue(deliveryDetails)
-//                .addOnCompleteListener { task ->
-//                    if (task.isSuccessful) {
-//                        Toast.makeText(this, "Delivery details stored successfully", Toast.LENGTH_SHORT).show()
-//                    } else {
-//                        Toast.makeText(this, "Failed to store delivery details", Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//        }
     }
 }
-
