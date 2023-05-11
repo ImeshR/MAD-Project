@@ -1,8 +1,9 @@
 package com.example.madproject.Activity.Activity
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.util.Log
 import com.example.madproject.R
 import com.example.madproject.databinding.ActivityCheckoutBinding
@@ -36,6 +37,13 @@ class Checkout : AppCompatActivity() {
             // Perform payment processing and data insertion here
             insertPaymentData(address, zip, city, tp, price)
         }
+
+
+        val intent = intent
+        val addressString = intent.getStringExtra("address")
+        val zipString = intent.getStringExtra("zip")
+        val cityString = intent.getStringExtra("city")
+        val tpString = intent.getStringExtra("tp")
 
         binding.editDilivaryDetails.setOnClickListener {
             startActivity(Intent(this,updatedPayment::class.java))
