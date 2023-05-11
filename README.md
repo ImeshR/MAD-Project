@@ -46,7 +46,7 @@ resource for Sri Lankan students looking for affordable educational materials.
 <table>
   <tr>
     <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Home.png"></td>
-    <td>Diwan</td>
-    <td>Sachidu</td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Home.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Home.png"></td>
   </tr>
 </table>
