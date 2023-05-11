@@ -42,11 +42,27 @@ resource for Sri Lankan students looking for affordable educational materials.
 | Heshan W.A.S | IT21183768 | it21183768@my.sliit.lk | [@sachintha-heshan](https://github.com/sachintha-heshan) | 👨‍💻Member |
 | Ranawaka W.E.I | IT21233562 | it21233562@my.sliit.lk | [@ImeshR](https://github.com/ImeshR) | 👨‍💻Member |
 
+## App UIs
 
 <table>
   <tr>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/OpenScreen.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Splash%20Page.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Login.png"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/SignUp.png"></td>
     <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Home.png"></td>
-    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Home.png"></td>
-    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Home.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/UserProfile.png"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/UserInfoDisplay.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/UserInfoUpdate.png"></td>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/Privacy%20Page.png"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/ImeshR/MAD-Project/main/UIs/UpdatePassword.png"></td>
+    <td><img src=""></td>
+    <td><img src=""></td>
   </tr>
 </table>
