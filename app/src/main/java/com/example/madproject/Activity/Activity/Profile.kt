@@ -28,6 +28,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class Profile : Fragment() {
 
+    // Firebase variables declaration for authentication and cloud FireStore
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firebaseFirestore: FirebaseFirestore
 
