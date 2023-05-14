@@ -29,7 +29,7 @@ resource for Sri Lankan students looking for affordable educational materials.
 ```
 🧑‍💻 To develop this mobile application, We use Kotlin and Firebase Authentication
 
-💡 FrontEnd - Inbuild Andriod Studio Fields
+💡 FrontEnd - Inbuild Andriod Studio Fields, XML Code
 💡 BackEnd - Kotlin, Firebase Authentication, Firestore
 💡 IDE - Andriod Studio
 ```
